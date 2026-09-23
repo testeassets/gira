@@ -1,0 +1,42 @@
+GOOGLE CLOUD — CRIAR OAUTH iOS DO GIRA
+======================================
+
+1. Abra o mesmo projeto Google Cloud usado pelo GIRA Android.
+
+2. Acesse:
+   Google Auth Platform
+   -> Clients
+   -> Create Client
+
+3. Application type:
+   iOS
+
+4. Nome:
+   GIRA Mobile iOS
+
+5. Bundle ID:
+   br.com.gira.mobile
+
+6. Salve.
+
+7. Abra o cliente recém-criado.
+
+8. Copie:
+   - Client ID
+   - iOS URL scheme / Reversed client ID
+
+O Client ID será parecido com:
+   608060642580-xxxxxxxxxxxxxxxx.apps.googleusercontent.com
+
+O esquema invertido será parecido com:
+   com.googleusercontent.apps.608060642580-xxxxxxxxxxxxxxxx
+
+9. NÃO altere o Web Client ID do Backend:
+   608060642580-kkq9fgsaj8dtrkot7p8jbel1li3p4rok.apps.googleusercontent.com
+
+10. Envie para o ChatGPT apenas:
+    - iOS Client ID
+    - iOS URL scheme / Reversed client ID
+
+Esses identificadores OAuth não são senhas.
+Não envie chaves privadas, certificados .p8 ou senhas Apple.

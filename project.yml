@@ -1,0 +1,43 @@
+name: GIRA
+options:
+  bundleIdPrefix: br.com.gira
+  deploymentTarget:
+    iOS: "16.0"
+
+packages:
+  GoogleSignIn:
+    url: https://github.com/google/GoogleSignIn-iOS
+    from: 8.0.0
+
+targets:
+  GIRA:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: GIRA
+        excludes:
+          - Info.plist
+    resources:
+      - GIRA/Resources
+    info:
+      path: GIRA/Info.plist
+    dependencies:
+      - package: GoogleSignIn
+        product: GoogleSignIn
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: br.com.gira.mobile
+        PRODUCT_NAME: GIRA
+        SWIFT_VERSION: 5.0
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 10
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+        IPHONEOS_DEPLOYMENT_TARGET: 16.0
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_PREVIEWS: YES
+        GIRA_SERVER_CLIENT_ID: 608060642580-kkq9fgsaj8dtrkot7p8jbel1li3p4rok.apps.googleusercontent.com
+        GIRA_BACKEND_URL: https://script.google.com/macros/s/AKfycbzQKtA3RFd-PzZlW9q9m1d2uGTxyrE7oIrGCAbDrOpJdoZ4SYVU3YK8gDLwpKF5UuLo/exec
+        GIRA_IOS_CLIENT_ID: 608060642580-i7c2qd3t6ls7t2k18ckksap646amfr4o.apps.googleusercontent.com
+        GIRA_REVERSED_CLIENT_ID: com.googleusercontent.apps.608060642580-i7c2qd3t6ls7t2k18ckksap646amfr4o

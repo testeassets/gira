@@ -1,0 +1,56 @@
+GIRA iOS 1.0 RC1 — PRÓXIMOS PASSOS NO CODEMAGIC
+=================================================
+
+STATUS
+------
+Google OAuth iOS já está aplicado ao projeto.
+
+Bundle ID:
+br.com.gira.mobile
+
+iOS Client ID:
+608060642580-i7c2qd3t6ls7t2k18ckksap646amfr4o.apps.googleusercontent.com
+
+Reversed Client ID:
+com.googleusercontent.apps.608060642580-i7c2qd3t6ls7t2k18ckksap646amfr4o
+
+Server/Web Client ID:
+608060642580-kkq9fgsaj8dtrkot7p8jbel1li3p4rok.apps.googleusercontent.com
+
+Backend:
+https://script.google.com/macros/s/AKfycbzQKtA3RFd-PzZlW9q9m1d2uGTxyrE7oIrGCAbDrOpJdoZ4SYVU3YK8gDLwpKF5UuLo/exec
+
+PRIMEIRO BUILD — SEM APPLE DEVELOPER
+-------------------------------------
+1. Crie um repositório GitHub.
+2. Envie o conteúdo desta pasta para o repositório.
+3. Acesse o Codemagic.
+4. Conecte sua conta GitHub.
+5. Selecione o repositório do GIRA iOS.
+6. O Codemagic detectará codemagic.yaml.
+7. Execute:
+
+   GIRA iOS - Build sem assinatura
+
+Esse workflow usa macOS/Xcode na nuvem, instala XcodeGen,
+gera GIRA.xcodeproj, resolve GoogleSignIn e compila sem assinatura.
+
+TESTFLIGHT / IPHONE REAL
+------------------------
+Depois você precisará de:
+- Apple Developer Program;
+- App ID / Bundle ID br.com.gira.mobile;
+- app criado no App Store Connect;
+- integração App Store Connect no Codemagic;
+- assinatura Apple configurada.
+
+Só então preencha APP_STORE_APPLE_ID no codemagic.yaml e execute:
+
+   GIRA iOS - TestFlight/App Store
+
+NÃO COMPARTILHE
+---------------
+- chave privada Apple .p8;
+- senha de certificado;
+- senha da conta Apple;
+- certificados privados.
