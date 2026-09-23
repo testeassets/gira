@@ -583,11 +583,25 @@ struct GiraBrandHeader: View {
 
 struct GiraLogo: View {
     var body: some View {
-        Image("gira_logo")
-            .resizable()
-            .scaledToFit()
-            .padding(4)
-            .background(.white, in: RoundedRectangle(cornerRadius: 16))
+        Group {
+            if let url = Bundle.main.url(
+                forResource: "gira_logo",
+                withExtension: "png"
+            ),
+            let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Image(systemName: "graduationcap.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundStyle(Color.giraBlue)
+            }
+        }
+        .padding(4)
+        .background(.white, in: RoundedRectangle(cornerRadius: 16))
     }
 }
 

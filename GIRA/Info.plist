@@ -31,14 +31,9 @@
             </array>
         </dict>
     </array>
-
     <key>UILaunchScreen</key>
-    <dict>
-        <key>UIColorName</key>
-        <string>LaunchBackground</string>
-    </dict>
-
-    <key>UISupportedInterfaceOrientations</key>
+    <dict/>
+<key>UISupportedInterfaceOrientations</key>
     <array>
         <string>UIInterfaceOrientationPortrait</string>
         <string>UIInterfaceOrientationLandscapeLeft</string>

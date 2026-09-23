@@ -1,0 +1,35 @@
+GIRA iOS 1.0 RC1.1 — CORREÇÃO DO BUILD
+=======================================
+
+ERRO OBSERVADO
+--------------
+O primeiro build chegou a compilar os arquivos Swift e linkar o executável,
+mas falhou em:
+
+CompileAssetCatalogVariant ... Assets.xcassets
+
+CORREÇÃO
+--------
+- Assets.xcassets removido do projeto.
+- A logo agora é carregada diretamente de gira_logo.png no bundle.
+- O launch screen não depende mais de named color asset.
+- O primeiro workflow do Codemagic agora compila para iOS Simulator,
+  sem code signing.
+- O log integral do xcodebuild será salvo em /tmp/gira_xcodebuild.log.
+
+O QUE FAZER
+-----------
+1. Substitua no GitHub o projeto anterior por esta versão RC1.1.
+2. Faça commit/push.
+3. No Codemagic, execute novamente:
+
+   GIRA iOS - Build sem assinatura
+
+4. Não execute ainda o workflow TestFlight/App Store.
+
+RESULTADO ESPERADO
+------------------
+Build succeeded.
+
+Quando o unsigned simulator build passar, avançamos para:
+Apple Developer -> assinatura -> App Store Connect -> TestFlight.
